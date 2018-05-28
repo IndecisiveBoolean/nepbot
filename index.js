@@ -26,7 +26,7 @@ for (const file of commandFiles) {
 // - reconnects after disconnecting
 client.on('ready', () => {
     console.log('Ready!');
-    gameName = "n+help";
+    client.user.setActivity('n+help');
 });
 
 // login to Discord with your app's token
