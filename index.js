@@ -26,6 +26,7 @@ for (const file of commandFiles) {
 // - reconnects after disconnecting
 client.on('ready', () => {
     console.log('Ready!');
+    gameName = "n+help";
 });
 
 // login to Discord with your app's token
@@ -33,9 +34,9 @@ client.on('ready', () => {
 client.on('message', message => {
       if (!message.content.startsWith(prefix) || message.author.bot) return;
   
-        
-        const args = message.content.slice(prefix.length).split(/ +/);
-        const command = args.shift().toLowerCase();
+          
+          const args = message.content.toLowerCase().slice(prefix.length).trim().split(/ +/g);
+          const command = args.shift().toLowerCase();
 
         if (!client.commands.has(command)) return;
 
@@ -48,65 +49,3 @@ client.on('message', message => {
         }
 });
 client.login(token);
-  
-  /*
-  if (message.content.indexOf('n+') > -1) {
-    if (message.content == `${prefix}nep`) {
-        message.channel.send('./images.NEP_NEP.gif');
-        } else if (message.content == `${prefix}nep'd`) {
-          message.channel.send(`OH SHIT ${taggedUser.username}, YOU FRICCIN MORON, YOU JUST GOT NEP\'D`, {files: ['https://i.imgur.com/EaZUef1.gif']});  
-        } else if (message.content === `${prefix}server`) {
-          message.channel.send(`This server's name is: ${message.guild.name}\nTotal Members: ${message.guild.memberCount}`);
-        } else if (message.content === `${prefix}user-info`) {
-        message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
-        } else if (command === 'kick') {
-          // grab the "first" mentioned user from the message
-          
-          // this will return a `User` object, just like `message.author`
-          const taggedUser = message.mentions.users.first();
-          
-          // checks the .size properties value of the message.mentions.users collection if 0 is returned
-          if (!message.mentions.users.size) {
-            return message.reply('you need to tag a user in order to kick them!');
-          }
-          
-          message.channel.send(`You wanted to kick: ${taggedUser.username}`);
-        } else if (command === 'avatar') {
-            if (!message.mentions.users.size) {
-                return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
-            }
-          
-          const avatarList = message.mentions.users.map(user => {
-              return `${user.username}'s avatar: ${user.displayAvatarURL}`;
-          });
-          
-          // send the entire array of strings as a message
-          // by default, discord.js will `.join()` the array with `\n`
-          message.channel.send(avatarList);
-
-            // ...
-        } else if (command === 'prune') {
-            const amount = parseInt(args[0] + 1);
-
-            if (isNaN(amount)) {
-                return message.reply('that doesn\'t seem to be a valid number.');
-            } else if (amount <= 1 || amount > 100) {
-                return message.reply('you need to input a number between 1 and 99.');
-            }
-            // Deletes the amount of messages according to the value the user input when using the command
-            message.channel.bulkDelete(amount, true).catch(error => {
-              console.error(error);
-              message.channel.send("There was an error while trying to prune messages in this channel! Messages older than TWO WEEKS can not be pruned!")
-            }); // the TRUE parameter will filter out messages older than two weeks which would normally cause an error.
-        } else if (command === 'args-info') {
-        if (!args.length) {
-            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-        } else if (args[0] === 'foo') {
-            return message.channel.send('bar');
-        }
-          message.channel.send(`First argument: ${args[0]}`);
-      } 
-    }
-
-
-*/

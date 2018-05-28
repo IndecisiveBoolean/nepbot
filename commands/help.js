@@ -7,7 +7,7 @@ The folowing commands are available in NepBot
 \`\`\`
 nep                nep
 nep'd <user>       USE THIS COMMAND AND TOTALLY NEP YOUR FRIENDS!
-quotes <character> Returns a random quote of a character specified by user.
+quote <character> Returns a random quote of a character specified by user.
 ping               pong?
 prune              Clean messages from chat.
 avatar <user>      Will display the avatar of a given user or yourself.
