@@ -16,13 +16,13 @@ module.exports = {
         }
       }
       
-      if (message.mentions.users.size > 4) { // limits the amount of users that can be nep'd at once
+      if (message.mentions.users.size >= 5) { // limits the amount of users that can be nep'd at once
             return message.channel.send(`I can't NEP that many people! It's dangerous!`);
           } else if (message.mentions.everyone === true || message.mentions.here === true) { // checks if the arguments for user is === 0
             return message.channel.send(`That's too many people to NEP!`);
-          } else if (taggedUser === message.author) { // checks to see if user is trying to nep theirself
+          } else if (taggedUser[0] === message.author) { // checks to see if user is trying to nep theirself
             return message.channel.send(`You'd like that, wouldn't you.`, {files:[`https://i.imgur.com/rydjyiP.jpg`]});
-          } else if (message.mentions.users.size > 1) { // checks to see if user is trying to nep theirself
+          } else if (message.mentions.users.size >= 2) { // checks to see if user is trying to nep theirself
             return message.channel.send(`OH SHIT ${taggedUser}, YOU FRICCIN MORONS, YOU JUST GOT NEP\'D!`, {files: [randomImage]});
           } else if (message.mentions.users.size === 0) { // checks if the arguments for user is === 0
             return message.channel.send(`I can't NEP the air...`);
