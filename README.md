@@ -1,7 +1,7 @@
 # NepBot
 > A bot to NEP in your server and eat your puddings!
 
-![](https://i.imgur.com/FrlSTOf.png)
+![](https://i.imgur.com/0X3J7Ue.png)
 >Currently a private bot.
 ## Release History
 
