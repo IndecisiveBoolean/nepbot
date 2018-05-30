@@ -5,7 +5,7 @@
 >Currently a private bot.
 ## Release History
 
-* 0.0.3
+* 0.0.4
    * Added nepgya command.
    * Added different responses to the nep command depending on who is nep'd.
    * Added more even more NEP potential to the nep command by allowing user to nep multiple people.
