@@ -1,6 +1,6 @@
 {
   "name": "nepbot",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "NepBot that has come to Nep in your servers and eat your puddings!",
   "main": "index.js",
   "dependencies": {

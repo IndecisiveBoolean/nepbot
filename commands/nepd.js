@@ -1,8 +1,13 @@
-
+const talkedRecently = new Set();// sets cooldown
 module.exports = {
     name: 'nep\'d',
     description: 'USE THIS COMMAND AND TOTALLY NEP YOUR FRIENDS!',
     execute(message, args) {
+      
+       if (talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minute before nepping someone again. - " + message.author);
+    } else {
+      
       const images = ['https://i.imgur.com/m9BtfFb.jpg',
                        'https://i.imgur.com/Y5YNFVD.png',
                        'https://i.imgur.com/Zsd3Mk4.png',
@@ -41,5 +46,16 @@ module.exports = {
             message.channel.send(`OH SHIT ${taggedUser}, YOU FRICCIN MORON, YOU JUST GOT NEP\'D!`, {files: [randomImage]});
             prevMsgDelete();
           };
+      
+           // the user can type the command ... your command code goes here :)
+
+        // Adds the user to the set so that they can't talk for a minute
+        talkedRecently.add(message.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(message.author.id);
+        }, 60000);
+      }
+      
     },
 };

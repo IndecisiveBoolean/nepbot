@@ -1,7 +1,13 @@
+const talkedRecently = new Set();
 module.exports = {
     name: 'nep',
     description: 'nep',
-    execute(message, args) {      
+    execute(message, args) {
+      
+      if (talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 8 seconds before the next Nep. - " + message.author);
+    } else {
+      
       const choice = Math.floor((Math.random() * 5000) + 1);
       
       if (choice >= 3000) {
@@ -26,5 +32,14 @@ module.exports = {
       } else if (choice === 2999) {
         message.channel.send("This NEP only has a 1/5000 chance of appearing!", {files: ['https://i.imgur.com/Jonu9ft.png']});           
       }
+           // the user can type the command ... your command code goes here :)
+
+        // Adds the user to the set so that they can't talk for a minute
+        talkedRecently.add(message.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(message.author.id);
+        }, 8000);
+      } 
     },
 };
