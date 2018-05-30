@@ -5,6 +5,15 @@
 >Currently a private bot.
 ## Release History
 
+* 0.0.5
+   * Added nosad command.
+   * Added more images for more Nep potential.
+   * Added secret command.
+   * Added rare Nep.
+   * Added auto-deletion of the author/user comment that triggered the nep'd command for increased     stealth Nepping.
+   * Corrected more spelling errors.
+
+
 * 0.0.4
    * Added nepgya command.
    * Added different responses to the nep command depending on who is nep'd.

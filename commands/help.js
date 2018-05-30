@@ -14,6 +14,8 @@ help               This.
 haha               hahahahahahaha
 lewd               Oh my...
 nepgya!            Nepgya things.
+nosad              Please don't be sad.
+Secret             It does not use the n+ prefix. It checks for two specific words with proper                          grammar and ends with an exclamation point!
 \`\`\`
 `);
      

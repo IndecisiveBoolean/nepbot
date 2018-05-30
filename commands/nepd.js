@@ -1,3 +1,4 @@
+
 module.exports = {
     name: 'nep\'d',
     description: 'USE THIS COMMAND AND TOTALLY NEP YOUR FRIENDS!',
@@ -5,7 +6,8 @@ module.exports = {
       const images = ['https://i.imgur.com/m9BtfFb.jpg',
                        'https://i.imgur.com/Y5YNFVD.png',
                        'https://i.imgur.com/Zsd3Mk4.png',
-                       'https://i.imgur.com/oLvjrjR.jpg']
+                       'https://i.imgur.com/oLvjrjR.jpg'
+                       ]
       
       const taggedUser = message.mentions.users.array();
       let randomImage = images[Math.floor(Math.random() * images.length)];
