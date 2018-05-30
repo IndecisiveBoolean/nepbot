@@ -10,7 +10,7 @@ module.exports = {
       
       const choice = Math.floor((Math.random() * 5000) + 1);
       
-      if (choice >= 3000) {
+      if (choice >= 2000) {
         const images = ['https://i.imgur.com/XjN1U9h.png',
                         'https://i.imgur.com/EnGIqhM.png',
                         'https://i.imgur.com/Nj4outz.jpg',
@@ -21,7 +21,7 @@ module.exports = {
         const randomImage = images[Math.floor(Math.random() * images.length)];
         message.channel.send("NEP", {files: [randomImage]});
         
-      } else if (choice <= 2998) {
+      } else if (choice <= 1998) {
         const images = ['https://i.imgur.com/LHpQjE8.png',
                         'https://i.imgur.com/2cpmrEp.png'
                         ]
@@ -29,9 +29,9 @@ module.exports = {
         
         const randomImage = images[Math.floor(Math.random() * images.length)];
         message.channel.send("**NEPUGYAAAAAAAAAAAAAA**", {files: [randomImage]});  
-      } else if (choice === 2999) {
+      } else if (choice === 1999) {
         message.channel.send("This NEP only has a 1/5000 chance of appearing!", {files: ['https://i.imgur.com/Jonu9ft.png']});           
-      }
+      } else {};
            // the user can type the command ... your command code goes here :)
 
         // Adds the user to the set so that they can't talk for a minute
