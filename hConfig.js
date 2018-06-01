@@ -1,4 +1,6 @@
 module.exports = {
     "prefix": "n+",
-    "token": process.env.TOKEN
+    "token": process.env.TOKEN,
+    "trelloKey": process.env.TRELLOKEY,
+    "trelloToken": process.env.TRELLOTOKEN
 };

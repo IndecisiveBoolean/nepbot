@@ -5,7 +5,7 @@ module.exports = {
     execute(message, args) {
       
       if (talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 8 seconds before the next Nep. - " + message.author);
+            message.channel.send("Wait a short while before further neps.. - " + message.author);
     } else {
       
       const choice = Math.floor((Math.random() * 5000) + 1);
@@ -39,7 +39,7 @@ module.exports = {
         setTimeout(() => {
           // Removes the user from the set after a minute
           talkedRecently.delete(message.author.id);
-        }, 8000);
+        }, 7000);
       } 
     },
 };

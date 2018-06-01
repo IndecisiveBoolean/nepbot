@@ -34,7 +34,7 @@ client.on('ready', () => {
 client.on('message', message => {
       if (message.content === "Bad bot!") {
         message.channel.send({files: ['https://i.imgur.com/DdcreHl.gif']});
-      }    
+      } 
   
       if (!message.content.startsWith(prefix) || message.author.bot) return;
   

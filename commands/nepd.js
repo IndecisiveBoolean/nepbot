@@ -5,13 +5,14 @@ module.exports = {
     execute(message, args) {
       
        if (talkedRecently.has(message.author.id)) {
-            message.channel.send("Wait 1 minute before nepping someone again. - " + message.author);
+            message.channel.send("You're Nepping to hard! Wait a short while before Nepping another user. - " + message.author);
     } else {
       
       const images = ['https://i.imgur.com/m9BtfFb.jpg',
                        'https://i.imgur.com/Y5YNFVD.png',
                        'https://i.imgur.com/Zsd3Mk4.png',
-                       'https://i.imgur.com/oLvjrjR.jpg'
+                       'https://i.imgur.com/oLvjrjR.jpg',
+                       'https://i.imgur.com/bjR3lAS.png'
                        ]
       
       const taggedUser = message.mentions.users.array();
@@ -25,7 +26,7 @@ module.exports = {
       
       //deletes message of the user who initiates the nep'd command. Only deletes the message on singular and multi-nep. DOES NOT DELETE MESSAGES ON OTHER CONDITIONS!
       function prevMsgDelete() {
-        message.delete([50])
+        message.delete([200])
               .then(msg => console.log(`Deleted message from ${msg.author.username}`))
               .catch(console.error);
       };
@@ -54,7 +55,7 @@ module.exports = {
         setTimeout(() => {
           // Removes the user from the set after a minute
           talkedRecently.delete(message.author.id);
-        }, 60000);
+        }, 7000);
       }
       
     },
