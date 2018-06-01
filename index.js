@@ -26,7 +26,7 @@ for (const file of commandFiles) {
 // - reconnects after disconnecting
 client.on('ready', () => {
     console.log('Ready!');
-    client.user.setActivity('n+help [Version 0.0.5]');
+    client.user.setActivity('n+help [Version 0.0.6]');
 });
 
 // login to Discord with your app's token
