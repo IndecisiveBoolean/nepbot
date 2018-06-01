@@ -32,10 +32,11 @@ client.on('ready', () => {
 // login to Discord with your app's token
 
 client.on('message', message => {
-      if (message.content === "Bad bot!") {
-        message.channel.send({files: ['https://i.imgur.com/DdcreHl.gif']});
-      } 
   
+      if (message.content === "Bad bot!" && message.author.bot === false) {
+        message.channel.send({files: ['https://i.imgur.com/DdcreHl.gif']});
+        } 
+      
       if (!message.content.startsWith(prefix) || message.author.bot) return;
   
           const args = message.content.toLowerCase().slice(prefix.length).trim().split(/ +/g);

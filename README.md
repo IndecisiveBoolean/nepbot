@@ -7,7 +7,7 @@
 
 * 0.0.6
    * Added bugs command that will grab a live "snapshot" of the current BUGS list on NepBot's Trello to post in chat.
-   * Added 'Bad bot!' and 'nep' commands that do not require a prefix.
+   * Added 'Bad bot!' command that does not require a prefix.
    * Updated help message to reflect changes and fixed the formatting issue that was in v0.0.5.
    * Added Trello link to help message.
    * Added and tweaked cooldown times on certain commands to be shorter and less annoying.

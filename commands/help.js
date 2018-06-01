@@ -20,7 +20,6 @@ quote <character>  Returns a random quote of a character specified by user.
 --------NO PREFIX REQUIRED--------
 
 Bad bot!           For yelling at NepBot if something doesn't work.
-nep                nep (different kind of nep)
 
 ----------------------------------
 \`\`\`
