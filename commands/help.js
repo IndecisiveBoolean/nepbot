@@ -12,7 +12,7 @@ help               This.
 lewd               Oh my...
 nep                nep
 nep'd <user>       USE THIS COMMAND AND TOTALLY NEP YOUR FRIENDS!
-nepgya!            Nepgya things.
+nepgya!            Nepgya challenge!
 nosad              Please don't be sad.
 ping               pong?
 quote <character>  Returns a random quote of a character specified by user.
@@ -25,7 +25,7 @@ Bad bot!           For yelling at NepBot if something doesn't work.
 \`\`\`
 **You can check in on current progress, bugs, and focus in NepBot's development here.**
 <https://trello.com/b/nHqpnFmL>
-`, {files: ['https://i.imgur.com/0X3J7Ue.png']}); 
+`, {files: ['https://i.imgur.com/kwBDtqc.png']}); 
       
      
     },
