@@ -2,7 +2,7 @@
 > A bot to NEP in your server and eat your puddings!
 
 ![](https://i.imgur.com/0X3J7Ue.png)
->Currently a private bot.
+> ### Check out the current development of NepBot [here](https://trello.com/b/nHqpnFmL/nepbot)!
 ## Release History
 
 * 0.0.6
