@@ -59,6 +59,20 @@ client.on('message', message => {
   const userCollection = require('./index.js');
   const ID = message.author.id.toString();
 
+  if (message.content === "Bad bot!" && !message.author.bot) {
+  const choice = Math.floor((Math.random() * 10) + 1);
+      
+      if (choice > 6) {
+        const images = ['https://i.imgur.com/DdcreHl.gif',
+                        'https://i.imgur.com/gmKg3RJ.gif']
+        
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        message.channel.send({files: [randomImage]});
+      } else {
+        return;
+      } 
+  }
+  
 // CURRENCY AND LEVEL SYSTEM
 
   function activeCurrencyIncrease() {
