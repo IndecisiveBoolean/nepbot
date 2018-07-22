@@ -5,6 +5,23 @@
 >Currently a private bot.
 ## Release History
 
+* 0.0.7
+   * Altered the chances of certain images appearing with the nep command.
+   * Removed the Quote command temporarily until I flesh it out fully.
+   * Edited the Help message to reflect changes.
+
+
+   Consider the below feature to be in BETA.
+   * Added user Nep-Notes (profiles).
+   * Added command to create your own unique Nep-Note.
+   * Added command to request your Nep-Note in chat.
+   * Added command tracking unique to each user (how many commands you've used total and your 3 most used commands).
+   * Added a level system.
+   * Added non-invasive chat alerts for a user who levels up.
+   * Added currency (Nep-Coin) for users to hoard since they can't really be used for anything at this time. 
+
+
+
 * 0.0.6
    * Added bugs command that will grab a live "snapshot" of the current BUGS list on NepBot's Trello to post in chat.
    * Added 'Bad bot!' command that does not require a prefix.

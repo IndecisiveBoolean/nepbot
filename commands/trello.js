@@ -1,3 +1,8 @@
+const db = require('../index.js');
+const collection = require('../index.js');
+
+// Require the Heroku Config file to access Trello key and token.
+
 const {trelloKey, trelloToken} = require('../hConfig.js');
 
 module.exports = {
@@ -22,8 +27,7 @@ module.exports = {
           bugList += `\`${result[i]}\`\n`;
           }// send the below string, line break and then the value of bugList is posted on each subsequent line.
           message.channel.send(`These are the current bugs I am aware of.\n${bugList}`);
-          }
-        
+          }        
       });
     },
 };

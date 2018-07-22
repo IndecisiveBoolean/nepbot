@@ -1,3 +1,6 @@
+
+// Sends a Direct Message to the message author with a formatted list of current commands.
+
 module.exports = {
     name: 'help',
     description: 'Summary of all commmands and how to use them',
@@ -26,8 +29,6 @@ Bad bot!           For yelling at NepBot if something doesn't work.
 **You can check in on current progress, bugs, and focus in NepBot's development here.**
 <https://trello.com/b/nHqpnFmL>
 `, {files: ['https://i.imgur.com/kwBDtqc.png']}); 
-      
-     
     },
 };
 
