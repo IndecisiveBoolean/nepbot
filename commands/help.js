@@ -10,15 +10,22 @@ The folowing commands are available in NepBot
 \`\`\`
 avatar <user>      Will display the avatar of a given user or yourself.
 bugs               Will post an up to date list of known bugs.
-haha               hahahahahahaha
+ha                 hahahahahahaha
 help               This.
 lewd               Oh my...
 nep                nep
 nep'd <user>       USE THIS COMMAND AND TOTALLY NEP YOUR FRIENDS!
 nepgya!            Nepgya challenge!
-nosad              Please don't be sad.
-ping               pong?
-quote <character>  Returns a random quote of a character specified by user.
+anti-sad           Please don't be sad.
+ping               pong, or something greater?
+
+
+------USER FOCUSED COMMANDS------
+
+create             Creates a Nep-Note (profile) for you!
+nepnote            Displays your Nep-Note in chat.
+
+----------------------------------
 
 --------NO PREFIX REQUIRED--------
 
@@ -31,4 +38,3 @@ Bad bot!           For yelling at NepBot if something doesn't work.
 `, {files: ['https://i.imgur.com/kwBDtqc.png']}); 
     },
 };
-
