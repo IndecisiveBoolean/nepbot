@@ -3,5 +3,5 @@ module.exports = {
     "token": process.env.TOKEN,
     "trelloKey": process.env.TRELLOKEY,
     "trelloToken": process.env.TRELLOTOKEN,
-    "dbURI": process.env.MONGODB_URI
+    "dbURI": process.env.MONGOLAB_IVORY_URI
 };
