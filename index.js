@@ -2,7 +2,7 @@ const fs = require('fs');
 // require the discord.js module
 const Discord = require('discord.js');
 
-const {prefix, token, dbURI} = require('./hConfig.js');
+const {prefix, token, dbConnectURI} = require('./hConfig.js');
 
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
@@ -35,7 +35,7 @@ client.on('ready', () => {
     const assert = require('assert');
   
     // Connection URL for DB
-    const url = `${dbURI}`;
+    const url = `${dbConnectURI}`;
 
     // Database Name
     const dbName = 'heroku_3cc4hbsm';
