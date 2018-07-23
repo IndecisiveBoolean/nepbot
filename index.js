@@ -1,3 +1,5 @@
+// ================================= DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+
 const fs = require('fs');
 // require the discord.js module
 const Discord = require('discord.js');
@@ -38,7 +40,7 @@ client.on('ready', () => {
     const url = `${dbConnectURI}`;
 
     // Database Name
-    const dbName = 'heroku_3cc4hbsm';
+    const dbName = 'heroku_czjqnz16';
 
     // Use connect method to connect to the server
     MongoClient.connect(url, function(err, client) {
@@ -60,7 +62,6 @@ client.on('message', message => {
   const ID = message.author.id.toString();
 
   if (message.content === "Bad bot!" && !message.author.bot) {
-  const choice = Math.floor((Math.random() * 10) + 1);
       
       if (choice > 6) {
         const images = ['https://i.imgur.com/DdcreHl.gif',
