@@ -11,7 +11,7 @@ module.exports = {
     db.userCollection.findOne({userID: ID}) // Checks for presence of document for User's profile.
       .then((doc) => {
         if (!doc) {
-        message.channel.send("I couldn't find your Nep-Note. Use the **createprofile** command to have one created.");
+        message.channel.send("I couldn't find your Nep-Note. Use the **create** command to have one created.");
           } else {
             // Array used to store the proper value for the TOP 3 COMMAND RANKING on the user profiles.
             let commandRanking = [

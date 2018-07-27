@@ -5,6 +5,7 @@ const fs = require('fs');
 const Discord = require('discord.js');
 
 const {prefix, token, dbConnectURI} = require('./hConfig.js');
+const talkedRecently = new Set();
 
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
@@ -150,13 +151,23 @@ client.on('message', message => {
         if (!client.commands.has(command)) return; // If no command exists return.
 
         try {
-          client.commands.get(command).execute(message, args);
-          commandUseCount();
-          activeCurrencyIncrease();
-          // Uses the string literal value in the createPropByCommand variable to get the proper command name.
-          db.userCollection.update(
-              {userID: ID},
-              {$inc: {[createPropByCommand]: + 1} });
+          if (talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait a short while before using another command." + message.author);
+          } else {
+            client.commands.get(command).execute(message, args);
+            commandUseCount();
+            activeCurrencyIncrease();
+            // Uses the string literal value in the createPropByCommand variable to get the proper command name.
+            db.userCollection.update(
+                {userID: ID},
+                {$inc: {[createPropByCommand]: + 1} });
+            
+            talkedRecently.add(message.author.id);
+            setTimeout(() => {
+              // Removes the user from the set after 5 seconds
+              talkedRecently.delete(message.author.id);
+            }, 5000);
+          }
         }
         catch (error) {
           console.error(error);
