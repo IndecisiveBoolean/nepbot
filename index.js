@@ -15,7 +15,6 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands');// the fs.readdirSync() method will return an array of all the file names in that directory, e.g. ['ping.js', 'beep.js']. With that array, you can loop over it and dynamically set your commands to the Collection you made above.
-const talkedRecently = new Set();
 
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
