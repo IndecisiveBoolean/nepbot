@@ -1,5 +1,5 @@
 # NepBot
-> NepBot is still in the early stages of development but here are some demonstrations of how it uses MongoDB and some API's.
+> NepBot is still in the early stages of development. Below are some demonstrations of how it uses MongoDB and API's.
 ![Short gif showing off a few features](https://i.imgur.com/BQqVKtb.gif)
 
 ![NepBot profile image](https://i.imgur.com/0X3J7Ue.png)
