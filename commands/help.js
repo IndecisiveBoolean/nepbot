@@ -24,6 +24,9 @@ ping               pong, or something greater?
 
 create             Creates a Nep-Note (profile) for you!
 nepnote            Displays your Nep-Note in chat.
+bonus              Get some free Nep-Coins every 24 hours!
+leaderboard        See the top 5 users by level in the server.
+description        Set a custom description in your Nep-Note.
 
 ----------------------------------
 

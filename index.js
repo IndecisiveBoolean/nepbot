@@ -5,7 +5,8 @@ const fs = require('fs');
 const Discord = require('discord.js');
 
 const {prefix, token, dbConnectURI} = require('./hConfig.js');
-const talkedRecently = new Set();
+const talkedRecently = new Set(); // Where a user's unique ID is stored if a cool down is active on commands for them.
+const dailyCheck = new Set(); // Where a user's unique ID is stored if they've used the daily bonus command for nep-coins.
 
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
