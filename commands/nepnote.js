@@ -38,7 +38,7 @@ module.exports = {
             
             const embed = { // A Discord embed that contains the unique information of the user's profile.
               "title":  `${message.member.displayName}'s Nep-Note`,//Represents the author of the message as a guild member.
-              "description": "nep nep description placeholder",
+              "description": `${doc.description}`,
               "url": "https://discordapp.com",
               "color": 10453245,
               "footer": {
