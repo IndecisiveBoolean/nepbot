@@ -1,7 +1,8 @@
 # NepBot
-> A bot to NEP in your server and eat your puddings!
+> NepBot is still in the early stages of development. Below are some demonstrations of how it uses MongoDB and API's.
+![Short gif showing off a few features](https://i.imgur.com/BQqVKtb.gif)
 
-![](https://i.imgur.com/0X3J7Ue.png)
+![NepBot profile image](https://i.imgur.com/0X3J7Ue.png)
 > ### Check out the current development of NepBot [here](https://trello.com/b/nHqpnFmL/nepbot)!
 ## Release History
 
