@@ -31,7 +31,7 @@ for (const file of commandFiles) {
 // - reconnects after disconnecting
 client.on('ready', () => {
     console.log('Ready!');
-    client.user.setActivity('n+help [Version 0.0.7]');
+    client.user.setActivity('n+help [Version 0.0.8]');
 
   // SETS AND ESTABLISHES A CONNECTION WITH THE MONGODB SERVER
     const MongoClient = require('mongodb').MongoClient;

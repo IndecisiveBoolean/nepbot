@@ -5,6 +5,13 @@
 > ### Check out the current development of NepBot [here](https://trello.com/b/nHqpnFmL/nepbot)!
 ## Release History
 
+* 0.0.8
+   * Added the ability for users to change the description in their Nep-Note.
+   * Added a leaderboard command that will display the top 5 users in the server by level.
+   * Added universal cool downs to all commands.
+   * Added a command giving users extra Nep-Coins once per 24hrs.
+   * Updated Help message to reflect changes.
+
 * 0.0.7
    * Altered the chances of certain images appearing with the nep command.
    * Removed the Quote command temporarily until I flesh it out fully.
