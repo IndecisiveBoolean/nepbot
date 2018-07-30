@@ -63,17 +63,11 @@ client.on('message', message => {
   const ID = message.author.id.toString();
 
   if (message.content === "Bad bot!" && !message.author.bot) {
-      
-      if (choice > 6) {
-        const images = ['https://i.imgur.com/DdcreHl.gif',
-                        'https://i.imgur.com/gmKg3RJ.gif']
-        
-        const randomImage = images[Math.floor(Math.random() * images.length)];
-        message.channel.send({files: [randomImage]});
-      } else {
-        return;
-      } 
-  }
+    const images = ['https://i.imgur.com/DdcreHl.gif',
+                    'https://i.imgur.com/gmKg3RJ.gif']
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+    message.channel.send({files: [randomImage]});
+  } 
   
 // CURRENCY AND LEVEL SYSTEM
 
