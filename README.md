@@ -6,6 +6,12 @@
 > ### Check out the current development of NepBot [here](https://trello.com/b/nHqpnFmL/nepbot)!
 ## Release History
 
+* 0.0.9
+   * Expanded the functionality of the nepnote command to allow any user's nepnote to be requested.
+   * Expanded the functionality of the leaderboard command allowing to sort by level, amount of nepcoin, or by total commands used.
+   * Expanded the avatar command to allow any user's avatar to be requested in chat.
+   * Added a new field to Nep-Notes that display the required XP remaining for the next level.
+
 * 0.0.8
    * Added the ability for users to change the description in their Nep-Note.
    * Added a leaderboard command that will display the top 5 users in the server by level.

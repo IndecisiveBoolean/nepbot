@@ -6,7 +6,6 @@ const Discord = require('discord.js');
 
 const {prefix, token, dbConnectURI} = require('./hConfig.js');
 const talkedRecently = new Set(); // Where a user's unique ID is stored if a cool down is active on commands for them.
-const dailyCheck = new Set(); // Where a user's unique ID is stored if they've used the daily bonus command for nep-coins.
 
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
@@ -31,14 +30,14 @@ for (const file of commandFiles) {
 // - reconnects after disconnecting
 client.on('ready', () => {
     console.log('Ready!');
-    client.user.setActivity('n+help [Version 0.0.8]');
+    client.user.setActivity('n++help');
 
   // SETS AND ESTABLISHES A CONNECTION WITH THE MONGODB SERVER
     const MongoClient = require('mongodb').MongoClient;
     const assert = require('assert');
   
     // Connection URL for DB
-    const url = `${dbConnectURI}`;
+    const url = `${dbURI}`;
 
     // Database Name
     const dbName = 'heroku_czjqnz16';
@@ -61,16 +60,16 @@ client.on('message', message => {
   const db = require('./index.js');
   const userCollection = require('./index.js');
   const ID = message.author.id.toString();
-
+  
   if (message.content === "Bad bot!" && !message.author.bot) {
     const images = ['https://i.imgur.com/DdcreHl.gif',
                     'https://i.imgur.com/gmKg3RJ.gif']
     const randomImage = images[Math.floor(Math.random() * images.length)];
     message.channel.send({files: [randomImage]});
-  } 
+  }
   
 // CURRENCY AND LEVEL SYSTEM
-
+  
   function activeCurrencyIncrease() {
     let currencyAddSelect = Math.floor((Math.random() * 6) + 1);
     
@@ -86,9 +85,9 @@ client.on('message', message => {
     });
   };
   
-  function passiveUserXPIncrease() {
+  function levelUpCheck() {
     //Limits the amount of XP a user can get per message.
-    let xpAdd = Math.min(Math.max(parseInt(message.content.length), 1), 10);
+    
     db.userCollection.findOne({userID: ID})
       .then((doc) => {
       // Checks for presence of document containing user's profile. If no document is found create one.
@@ -98,30 +97,52 @@ client.on('message', message => {
           } else {
             // Determines the next level based on the user's current experience by taking the square root of the total experience and multiplying it by 0.1 then flooring it to a round number. e.g. 400xp = level 2.
             const levelUpCalc = Math.floor(0.1 * Math.sqrt(doc.levelInfo.experience) );
-            //Updates the experience field with the xp user gained in their message.
-            db.userCollection.update(
-              {userID: ID},
-              {$inc: {"levelInfo.experience": + xpAdd} });
+            console.log();
+            const nextLevelXPCalc = 100 * Math.pow(levelUpCalc + 1, 2);
+            const xpRequiredForLevelUp = nextLevelXPCalc - doc.levelInfo.experience;
+            console.log(xpRequiredForLevelUp);
             //If user level is lower than the nextLevel variable's value, increase user level +1. (NOT THE NEXTLEVEL FIELD'S VALUE BUT THE CURRENT VALUE OF THE nextLevel VARIABLE!)
+            db.userCollection.update(
+                {userID: ID},
+                {$set: {"levelInfo.xpUntilNextLevel": xpRequiredForLevelUp}})
+            
             if (doc.levelInfo.level < levelUpCalc) {
+              console.log(nextLevelXPCalc - doc.levelInfo.experience);
               //Displays proper level in chat alert upon new level being reached. Without the alert is off by -1 and instead displays the user's previous level.
               let properLevelDisplay = doc.levelInfo.level + 1;
               //Updates the level field by +1.
+              //Updates the nextLevel field with the nextLevel properties's current value.
               db.userCollection.update(
                 {userID: ID},
-                {$inc: {"levelInfo.level": + 1} })
+                {$inc: {"levelInfo.level": + 1, "levelInfo.nextlevel": + 1}})
                 //Sends message in chat alerting message author of level up.
                 message.channel.send(`${message.author} is now level ${properLevelDisplay}`);
-                //Updates the nextLevel field with the nextLevel properties's current value.
-                db.userCollection.update(
-                {userID: ID},
-                {$inc: {"levelInfo.nextlevel": + 1} }) 
             }
           }
       });
     };
+  
+  function passiveUserXPIncrease(xpToAdd) {
+    //Limits the amount of XP a user can get per message.
+    
+    db.userCollection.findOne({userID: ID})
+      .then((doc) => {
+      // Checks for presence of document containing user's profile. If no document is found create one.
+        if (!doc) {
+          // If no document matching the user is found return.
+          return;
+          } else {
+            //Updates the experience field with the xp user gained in their message.
+            db.userCollection.update(
+              {userID: ID},
+              {$inc: {"levelInfo.experience": + xpToAdd} });
+            return;
+          }
+      });
+    };
       if (!message.author.bot) {
-          passiveUserXPIncrease();
+          passiveUserXPIncrease(Math.max(1, Math.min(message.content.length, 10)));
+          levelUpCheck();
       };
   
   function commandUseCount() { // Is called on proper command use and increments the globalCommandTracker by +1 to track a user's total command use count.

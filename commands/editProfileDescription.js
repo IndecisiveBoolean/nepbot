@@ -22,7 +22,7 @@ function descUpdate(content) { // Handles the updating/creation of the descripti
     {userID: ID},
     {$set: {description: `${content}`}}).then((doc) => {
     message.channel.send("I've updated your description with that message.");
-    collector.stop([console.log("Update complete. Stopping collector.")]);
+    collector.stop([console.log(`Update to ${message.author.username}' description complete. Stopping collector.`)]);
     }).catch((error) => {
       console.log(error);
     });

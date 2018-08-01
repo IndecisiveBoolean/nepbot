@@ -4,14 +4,15 @@ module.exports = {
     execute(message, args) {
       const username = message.author.username;
       const ID = message.author.id;
+      let taggedUser = message.mentions.users.array();
+      
         if (!message.mentions.users.size) {
-                return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
+                return message.channel.send(`Here's your avatar: ${message.author.displayAvatarURL}`);
+            } else if (message.mentions.users.size === 1){
+              return message.channel.send(`${taggedUser[0]}'s avatar: ${taggedUser[0].displayAvatarURL}`);
+            } else if (message.mentions.users.size > 1) {
+              return message.channel.send(`I can't display more than one avatar at a time.`);
             }
           
-          const avatarList = message.mentions.users.map(user => {
-              return `${user.username}'s avatar: ${user.displayAvatarURL}`;
-          });
-          
-          message.channel.send(avatarList);
     },
 };

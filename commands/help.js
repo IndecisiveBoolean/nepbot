@@ -8,7 +8,6 @@ module.exports = {
         message.author.send(`
 The folowing commands are available in NepBot
 \`\`\`
-avatar <user>      Will display the avatar of a given user or yourself.
 bugs               Will post an up to date list of known bugs.
 ha                 hahahahahahaha
 help               This.
@@ -19,14 +18,14 @@ nepgya!            Nepgya challenge!
 anti-sad           Please don't be sad.
 ping               pong, or something greater?
 
-
 ------USER FOCUSED COMMANDS------
 
 create             Creates a Nep-Note (profile) for you!
-nepnote            Displays your Nep-Note in chat.
+nepnote <user>     Displays the given user's Nep-Note in chat or your own if argument left empty!
 bonus              Get some free Nep-Coins every 24 hours!
-leaderboard        See the top 5 users by level in the server.
+leaderboard        See the top 5 users by level <n+leaderboard>, by Nep-Coin <n+leaderboard nepcoin>, or by total commands used with <n+leaderboard commands>!
 description        Set a custom description in your Nep-Note.
+avatar <user>      Will display the avatar of a given user or yourself if argument left empty.
 
 ----------------------------------
 

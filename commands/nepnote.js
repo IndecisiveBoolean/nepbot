@@ -5,15 +5,17 @@ module.exports = {
   name: 'nepnote',
   description: 'Queries the database for message author\'s profile and sends an embed containing that information in chat.',
   execute(message, args) {
+    let taggedUser = message.mentions.users.array();
     const username = message.author.username;
-    const ID = message.author.id.toString();
 
-    db.userCollection.findOne({userID: ID}) // Checks for presence of document for User's profile.
+    function profileLookup(userToQuery) {
+      db.userCollection.findOne({userID: userToQuery}) // Checks for presence of document for User's profile.
       .then((doc) => {
         if (!doc) {
         message.channel.send("I couldn't find your Nep-Note. Use the **create** command to have one created.");
           } else {
             // Array used to store the proper value for the TOP 3 COMMAND RANKING on the user profiles.
+            
             let commandRanking = [
               rank_1 = `You need to use more commands.`,
               rank_2 = `You need to use more commands.`,
@@ -35,22 +37,21 @@ module.exports = {
                     commandRanking[x] = `${commanduseObjToArray.slice(0)[x]}`;
                   }
             }
-            
             const embed = { // A Discord embed that contains the unique information of the user's profile.
-              "title":  `${message.member.displayName}'s Nep-Note`,//Represents the author of the message as a guild member.
+              "title":  `${doc.name}'s Nep-Note`,//Represents the author of the message as a guild member.
               "description": `${doc.description}`,
               "url": "https://discordapp.com",
               "color": 10453245,
               "footer": {
-                "text": "nep nep nep nep"
+                "text": "PROFILES ARE IN BETA"
               },
               "thumbnail": {
-                "url": `${message.author.displayAvatarURL}`
+                "url": `${taggedUser[0].displayAvatarURL}`
               },
               "fields": [
                 {
                   "name": "Stats:",
-                  "value": `Level: ${doc.levelInfo.level}\nNep-Coins: ${doc.nepcoin}\nCommands Used: ${doc.globalCommandTracker}\nEXP: ${doc.levelInfo.experience}`,
+                  "value": `Level: ${doc.levelInfo.level}\nXP: ${doc.levelInfo.experience} [${doc.levelInfo.xpUntilNextLevel} XP until level ${doc.levelInfo.nextlevel}]\nNep-Coins: ${doc.nepcoin}\nCommands Used: ${doc.globalCommandTracker}`,
                   "inline": true
                 },
                 {
@@ -60,8 +61,31 @@ module.exports = {
                 }
               ]
             };
-            message.channel.send({ embed });
+              message.channel.send({ embed });
+            
           }
       });
+    }
+    
+    for (let i = 0; i < taggedUser.length; i++) {
+        if (taggedUser[i].bot === true) { // checks if user is attempting to nep a bot
+            return message.channel.send(`Bots don't get Nep-Notes...`, {files: ['https://i.imgur.com/62CyJO5.gif']});
+        }
+      }
+    
+ 
+    if (message.mentions.users.size > 1) { // limits the amount of users that can be nep'd at once
+            return message.channel.send(`I can only grab a single Nep-Note!`);
+          } else if (message.mentions.everyone === true || message.mentions.here === true) { // checks if the arguments for command are either EVERYONE or HERE.
+            return message.channel.send(`Are you trying to damage the Nep-Notes!`);
+          } else if (message.mentions.users.size === 0 && message.author) {
+            taggedUser[0] = message.author;// checks to see if user is trying to nep theirself
+            return profileLookup(message.author.id);
+          } else if (message.mentions.users.size === 1) { // checks the amount of users being mentioned to assign proper response.
+            profileLookup(taggedUser[0].id);
+            return message.channel.send(`Here is ${taggedUser[0]}' Nep-Note!`);
+          }
+    
+    
   }
 };
