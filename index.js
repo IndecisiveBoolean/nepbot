@@ -97,17 +97,14 @@ client.on('message', message => {
           } else {
             // Determines the next level based on the user's current experience by taking the square root of the total experience and multiplying it by 0.1 then flooring it to a round number. e.g. 400xp = level 2.
             const levelUpCalc = Math.floor(0.1 * Math.sqrt(doc.levelInfo.experience) );
-            console.log();
             const nextLevelXPCalc = 100 * Math.pow(levelUpCalc + 1, 2);
             const xpRequiredForLevelUp = nextLevelXPCalc - doc.levelInfo.experience;
-            console.log(xpRequiredForLevelUp);
             //If user level is lower than the nextLevel variable's value, increase user level +1. (NOT THE NEXTLEVEL FIELD'S VALUE BUT THE CURRENT VALUE OF THE nextLevel VARIABLE!)
             db.userCollection.update(
                 {userID: ID},
                 {$set: {"levelInfo.xpUntilNextLevel": xpRequiredForLevelUp}})
             
             if (doc.levelInfo.level < levelUpCalc) {
-              console.log(nextLevelXPCalc - doc.levelInfo.experience);
               //Displays proper level in chat alert upon new level being reached. Without the alert is off by -1 and instead displays the user's previous level.
               let properLevelDisplay = doc.levelInfo.level + 1;
               //Updates the level field by +1.
