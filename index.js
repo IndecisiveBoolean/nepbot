@@ -37,7 +37,7 @@ client.on('ready', () => {
     const assert = require('assert');
   
     // Connection URL for DB
-    const url = `${dbURI}`;
+    const url = `${dbConnectURI}`;
 
     // Database Name
     const dbName = 'heroku_czjqnz16';
