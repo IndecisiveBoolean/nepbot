@@ -7,15 +7,10 @@ module.exports = {
   execute(message, args) {
     const username = message.author.username;
     const ID = message.author.id.toString();
-    const userRankArr = []
-    db.userCollection.find( {"levelInfo.level": {$gt: 0}} ).sort({"levelInfo.level" : -1}).limit(5).toArray() // Checks for presence of document for User's profile.
+    let leaderboardType = ``;
+    if (args == "level") {
+      db.userCollection.find( {"levelInfo.level": {$gt: 0}} ).sort({"levelInfo.level" : -1}).limit(5).toArray() // Checks for presence of document for User's profile.
       .then((doc) => {
-          
-//            let userRankArr = []            
-//            for (let x = 0; x < doc.length; x++) {
-//              userRankArr.push(doc[x]);
-//            }
-//            console.log(userRankArr);
             const embed = { // A Discord embed that contains the unique information of the user's profile.
               "title":  `Leaderboard for this server!`,//Represents the author of the message as a guild member.
               "color": 10453245,
@@ -29,5 +24,39 @@ module.exports = {
             };
             message.channel.send({ embed });
       });
+    } else if (args == "nepcoin") {
+
+      db.userCollection.find( {nepcoin: {$gt: 0}} ).sort({nepcoin : -1}).limit(5).toArray() // Checks for presence of document for User's profile.
+      .then((doc) => {
+            const embed = { // A Discord embed that contains the unique information of the user's profile.
+              "title":  `Leaderboard for this server!`,//Represents the author of the message as a guild member.
+              "color": 10453245,
+              "fields": [
+                {
+                  "name": "Top 5 users by amount of Nep-Coins!",
+                  "value": `1: (${doc[0].name} - ${doc[0].nepcoin} Nep-Coins)\n2: (${doc[1].name} - ${doc[1].nepcoin} Nep-Coins)\n3: (${doc[2].name} - ${doc[2].nepcoin} Nep-Coins)\n4: (${doc[3].name} - ${doc[3].nepcoin} Nep-Coins)\n5: (${doc[4].name} - ${doc[4].nepcoin} Nep-Coins)`,
+                  "inline": true
+                }
+              ]
+            };
+            message.channel.send({ embed });
+      });
+    } else if (args == "commands") {
+      db.userCollection.find( {globalCommandTracker: {$gt: 0}} ).sort({globalCommandTracker : -1}).limit(5).toArray() // Checks for presence of document for User's profile.
+      .then((doc) => {
+            const embed = { // A Discord embed that contains the unique information of the user's profile.
+              "title":  `Leaderboard for this server!`,//Represents the author of the message as a guild member.
+              "color": 10453245,
+              "fields": [
+                {
+                  "name": "Top 5 users by commands used in total!",
+                  "value": `1: (${doc[0].name} - Used ${doc[0].globalCommandTracker} Commands)\n2: (${doc[1].name} - Used ${doc[1].globalCommandTracker} Commands)\n3: (${doc[2].name} - Used ${doc[2].globalCommandTracker} Commands)\n4: (${doc[3].name} - Used ${doc[3].globalCommandTracker} Commands)\n5: (${doc[4].name} - Used ${doc[4].globalCommandTracker} Commands)`,
+                  "inline": true
+                }
+              ]
+            };
+            message.channel.send({ embed });
+      });
+    }
   }
 };
