@@ -23,7 +23,7 @@ ping               pong, or something greater?
 create             Creates a Nep-Note (profile) for you!
 nepnote <user>     Displays the given user's Nep-Note in chat or your own if argument left empty!
 bonus              Get some free Nep-Coins every 24 hours!
-leaderboard        See the top 5 users by level <n+leaderboard>, by Nep-Coin <n+leaderboard nepcoin>, or by total commands used with <n+leaderboard commands>!
+leaderboard        See the top 5 users by level <n+leaderboard level>, by Nep-Coin <n+leaderboard nepcoin>, or by total commands used with <n+leaderboard commands>!
 description        Set a custom description in your Nep-Note.
 avatar <user>      Will display the avatar of a given user or yourself if argument left empty.
 
