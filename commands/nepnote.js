@@ -51,7 +51,7 @@ module.exports = {
               "fields": [
                 {
                   "name": "Stats:",
-                  "value": `Level: ${doc.levelInfo.level}\nXP: ${doc.levelInfo.experience} [${doc.levelInfo.xpUntilNextLevel} XP until level ${doc.levelInfo.nextlevel}]\nNep-Coins: ${doc.nepcoin}\nCommands Used: ${doc.globalCommandTracker}`,
+                  "value": `Level: ${doc.levelInfo.level}\nXP: ${doc.levelInfo.experience}\n[${doc.levelInfo.xpUntilNextLevel} XP for level ${doc.levelInfo.nextlevel}]\nNep-Coins: ${doc.nepcoin}\nCommands Used: ${doc.globalCommandTracker}`,
                   "inline": true
                 },
                 {
