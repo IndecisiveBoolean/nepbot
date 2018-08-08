@@ -83,7 +83,7 @@ module.exports = {
             return profileLookup(message.author.id);
           } else if (message.mentions.users.size === 1) { // checks the amount of users being mentioned to assign proper response.
             profileLookup(taggedUser[0].id);
-            return message.channel.send(`Here is ${taggedUser[0]}' Nep-Note!`);
+            return message.channel.send(`Here is ${taggedUser[0]}'s Nep-Note!`);
           }
     
     
