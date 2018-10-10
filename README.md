@@ -1,7 +1,15 @@
 # NepBot
 ![Short gif showing off a few features](https://i.imgur.com/KrsVtMf.gif)
 
-> ### Check out the current development of NepBot [here](https://trello.com/b/nHqpnFmL/nepbot)!
+> NepBot is currently restricted to Discord servers I am in until user profiles and the currency system are complete.
+
+### Check out the current development of NepBot on NepBot's [Trello](https://trello.com/b/nHqpnFmL/nepbot)!
+
+#### Built With
+* [NodeJS](https://nodejs.org/en/)
+* [Heroku](https://www.heroku.com/) - The service I use to host NepBot
+* [MongoDB](https://www.mongodb.com/) & [mLab](https://www.mlab.com/) - The NoSQL Database for user profiles. 
+
 ## Release History
 
 * 0.0.9
