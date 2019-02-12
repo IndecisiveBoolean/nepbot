@@ -1,87 +1,19 @@
 # NepBot
-![Short gif showing off a few features](https://i.imgur.com/KrsVtMf.gif)
+![Short gif showing off a few NepBot features](https://i.imgur.com/KrsVtMf.gif)
 
-> NepBot is currently restricted to Discord servers I am in until user profiles and the currency system are complete.
+#### Q: What is NepBot?
+#### A: NepBot is a bot I'm creating that has a single focus, increase user activity in chat. That means it will not focus on moderation capabilities, there are bots for that already.
 
-### Check out the current development of NepBot on NepBot's [Trello](https://trello.com/b/nHqpnFmL/nepbot)!
+#### Q: Can I get NepBot on my server?
+#### A: NepBot is currently restricted to Discord servers I am in until user profiles and the currency system are complete.
 
-#### Built With
+#### Q: Is there a list of planned features anywhere?
+#### A: Check out the current development of NepBot on NepBot's [Trello](https://trello.com/b/nHqpnFmL/nepbot)!
+
+#### Q: How is NepBot made?
+#### A: I'm using the following to create NepBot.
 * [NodeJS](https://nodejs.org/en/)
 * [Heroku](https://www.heroku.com/) - The service I use to host NepBot
 * [MongoDB](https://www.mongodb.com/) & [mLab](https://www.mlab.com/) - The NoSQL Database for user profiles. 
 
-## Release History
-
-* 0.0.9
-   * Expanded the functionality of the nepnote command to allow any user's nepnote to be requested.
-   * Expanded the functionality of the leaderboard command allowing to sort by level, amount of nepcoin, or by total commands used.
-   * Expanded the avatar command to allow any user's avatar to be requested in chat.
-   * Added a new field to Nep-Notes that display the required XP remaining for the next level.
-
-* 0.0.8
-   * Added the ability for users to change the description in their Nep-Note.
-   * Added a leaderboard command that will display the top 5 users in the server by level.
-   * Added universal cool downs to all commands.
-   * Added a command giving users extra Nep-Coins once per 24hrs.
-   * Updated Help message to reflect changes.
-
-* 0.0.7
-   * Altered the chances of certain images appearing with the nep command.
-   * Removed the Quote command temporarily until I flesh it out fully.
-   * Edited the Help message to reflect changes.
-
-
-   Consider the below feature to be in BETA.
-   * Added user Nep-Notes (profiles).
-   * Added command to create your own unique Nep-Note.
-   * Added command to request your Nep-Note in chat.
-   * Added command tracking unique to each user (how many commands you've used total and your 3 most used commands).
-   * Added a level system.
-   * Added non-invasive chat alerts for a user who levels up.
-   * Added currency (Nep-Coin) for users to hoard since they can't really be used for anything at this time. 
-
-
-
-* 0.0.6
-   * Added bugs command that will grab a live "snapshot" of the current BUGS list on NepBot's Trello to post in chat.
-   * Added 'Bad bot!' command that does not require a prefix.
-   * Updated help message to reflect changes and fixed the formatting issue that was in v0.0.5.
-   * Added Trello link to help message.
-   * Added and tweaked cooldown times on certain commands to be shorter and less annoying.
-   * Corrected more spelling errors.
-   * Added spelling errors.
-
-
-* 0.0.5
-   * Added nosad command.
-   * Added more images for more Nep potential.
-   * Added secret command.
-   * Added rare Nep.
-   * Added auto-deletion of the author/user comment that triggered the nep'd command for increased     stealth Nepping.
-   * Corrected more spelling errors.
-
-
-* 0.0.4
-   * Added nepgya command.
-   * Added different responses to the nep command depending on who is nep'd.
-   * Added more even more NEP potential to the nep command by allowing user to nep multiple people.
-   * Told NepBot to never mention other bots again.
-   * Tweaked some commands to be more varied.
-   * Increased Nep-Factor by even more (0.10%).
-   * Updated help command to reflect new changes.
-
-* 0.0.3
-   * Removed leftover Prune command because NepBot isn't about that serious moderation business.
-   * Added check for proper user tagging in NEP command.
-   * Added response if no user tagged in argument with NEP command.
-   * Added response if user tried to NEP themselves.
-   * Fixed issue with arguments being case sensitive in quote command.
-   * Fixed typo in HELP message.
-
-* 0.0.2
-    * NepBot has 4 new commands.
-    * Added to NepBot's pudding stores.
-    * Nep-factor increased by 0.5%.
-
-* 0.0.1
-    * NepBot has NEP'D for the first time!
+You can view NepBot's release history [here](nepbot/CHANGELOG.md).
