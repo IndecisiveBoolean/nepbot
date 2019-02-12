@@ -16,4 +16,4 @@
 * [Heroku](https://www.heroku.com/) - The service I use to host NepBot
 * [MongoDB](https://www.mongodb.com/) & [mLab](https://www.mlab.com/) - The NoSQL Database for user profiles. 
 
-You can view NepBot's release history [here](nepbot/CHANGELOG.md).
+You can view NepBot's release history [here](https://github.com/IndecisiveBoolean/nepbot/edit/master/CHANGELOG.md).

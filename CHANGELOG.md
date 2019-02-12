@@ -1,6 +1,8 @@
-**All changes to NepBot will be included here**
+## All changes to NepBot will be included here
 
-## Release History
+<br>
+  
+### Release History
 
 ### 0.9.0
    **What's New?**
